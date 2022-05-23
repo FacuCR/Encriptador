@@ -28,7 +28,7 @@ button {
 
 /**** LOGO ****/
 header .logo {
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 
 /**** INPUT SECTION ****/
@@ -72,8 +72,65 @@ header .logo {
   display: flex;
   flex-flow: column;
   padding: 32px;
+  margin: 2rem;
   background: #ffffff;
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
   border-radius: 32px;
   text-align: center;
+}
+
+/**** TABLET ****/
+@media (min-width: 600px) {
+  .input .buttons {
+    flex-flow: row;
+    justify-content: space-evenly;
+  }
+  .input > *,
+  .input .buttons > * {
+    margin: 0;
+  }
+  .input .buttons > * {
+    width: 40%;
+  }
+  .output img {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+/**** DESKTOP ****/
+
+@media (min-width: 1200px) {
+  body {
+    height: 90vh;
+  }
+  main {
+    display: flex;
+    flex-flow: row;
+    height: 100vh;
+    padding-left: 6rem;
+  }
+  .input {
+    width: 70%;
+  }
+  .input textarea {
+    height: 65vh;
+  }
+  .input .buttons {
+    flex-flow: row;
+    justify-content: space-evenly;
+  }
+  .input > *,
+  .input .buttons > * {
+    margin: 0;
+  }
+  .input .buttons > * {
+    width: 40%;
+  }
+  .output {
+      width: 30%;
+  }
+  .output img {
+    width: 100%;
+  }
 }
