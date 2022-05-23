@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="css/normalize.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="./img/logo.svg">
+    </header>
+    <main>
+      <section class="input">
+        <textarea
+          name="textarea"
+          rows="15"
+          cols="30"
+          placeholder="escribe tu mensaje aqui"
+        ></textarea>
+        <div class="instructions">
+          <img src="./img/warning.svg" />
+          <p>Solo letras minúsculas y sin acentos</p>
+        </div>
+        <div class="buttons">
+          <button class="btn-primary">Encriptar</button>
+          <button class="btn-secondary">Desencriptar</button>
+        </div>
+      </section>
+      <section class="output"></section>
+    </main>
+    <footer></footer>
+  </body>
+</html>

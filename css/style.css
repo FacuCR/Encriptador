@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+body {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background: #f3f5fc;
+  margin: 0.5rem;
+}
+
+/**** BUTTONS ****/
+button {
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  border: 0.0625rem solid #0a3871;
+  height: 4.1875rem;
+}
+.btn-primary {
+  color: white;
+  background: #0a3871;
+}
+.btn-secondary {
+  color: #0a3871;
+  background: #f3f5fc;
+}
+
+/**** LOGO ****/
+header .logo {
+    margin-bottom: 1rem;
+}
+
+
+/**** INPUT SECTION ****/
+.input textarea {
+  display: block;
+  color: #0a3871;
+  background: #f3f5fc;
+  width: 100%;
+  height: 100%;
+  border-color: Transparent;
+}
+
+.input .instructions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 0.5rem;
+}
+.input .instructions p {
+  color: #495057;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 150%;
+}
+
+.input > *,
+.input .buttons > * {
+  margin: 1rem 0;
+}
+.input .buttons > *:first-child {
+  margin: 0;
+}
+.input .buttons {
+  display: flex;
+  flex-flow: column;
+}
