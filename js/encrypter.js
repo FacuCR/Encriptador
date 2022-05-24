@@ -3,19 +3,37 @@ const inputMessage = document.querySelector("textarea");
 const buttonEncrypter = document.querySelector(".btn-encrypter");
 const buttonDesencrypter = document.querySelector(".btn-desencrypter");
 const outputContent = document.querySelector(".content");
+const btnCopy = document.querySelector(".btn-copy");
 let outputText = "";
 
 buttonEncrypter.addEventListener("click", () => {
-  outputText = encrypter(inputMessage.value);
+  outputText = encrypter(inputMessage.value).toLowerCase();
   deleteChildrenElements(outputContent);
   addMessageToOutputSection(outputContent, outputText);
+  btnCopy.style.visibility = "visible";
 });
 
 buttonDesencrypter.addEventListener("click", () => {
-  outputText = desencrypter(inputMessage.value);
+  outputText = desencrypter(inputMessage.value.toLowerCase());
   deleteChildrenElements(outputContent);
   addMessageToOutputSection(outputContent, outputText);
+  btnCopy.style.visibility = "visible";
 });
+
+btnCopy.onclick = () => {
+  document.addEventListener(
+    "copy",
+    (e) => {
+      const outputText = document.querySelector(".outputText").innerHTML;
+      e.clipboardData.setData("text/plain", outputText);
+      e.preventDefault();
+    },
+    true
+  );
+
+  document.execCommand("copy");
+  console.log("copied text : ", outputText);
+};
 
 function encrypter(message) {
   let word;
@@ -157,6 +175,7 @@ function deleteChildrenElements(elementHTML) {
 function addMessageToOutputSection(elementHTML, message) {
   const p = document.createElement("p");
   const text = document.createTextNode(message);
+  p.classList.add("outputText");
   p.appendChild(text);
   elementHTML.appendChild(p);
 }
